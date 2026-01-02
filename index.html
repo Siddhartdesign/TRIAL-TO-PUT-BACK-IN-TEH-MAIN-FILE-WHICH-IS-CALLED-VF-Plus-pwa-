@@ -383,7 +383,7 @@ const helpOverlay = document.getElementById("helpOverlay");
   // Positions the ? help button directly below the camera (👁) button.
 // Safe: read-only layout measurement. Remove this block if it ever causes issues.
 function positionHelpHint(){
-  const r = toggleCam.getBoundingClientRect();
+  const r = exportBtn.getBoundingClientRect();
   helpHint.style.left = (r.left + r.width/2 - 12) + "px";
   helpHint.style.top  = (r.bottom + 8) + "px";
 }
