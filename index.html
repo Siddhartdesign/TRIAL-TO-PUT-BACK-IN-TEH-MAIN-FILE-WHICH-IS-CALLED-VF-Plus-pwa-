@@ -255,26 +255,14 @@
   height: 1px;
 }
 /* ===== HELP AFFORDANCE (SAFE LAYER) ===== */
-
 #helpHint{
   position: fixed;
   left: 18px;
   bottom: 96px;
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.28);
   z-index: 91;
-  user-select: none;
-  touch-action: none;
-  pointer-events: auto;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
 }
-  
-#helpHint:active {
-  color: rgba(255,255,255,0.5);
-}
+
+
 
 .help-overlay {
   position: fixed;
@@ -366,7 +354,7 @@
   </div>
 </div>
 <div id="helpOverlay" class="help-overlay" hidden></div>
-<div id="helpHint">?</div>
+<button id="helpHint" class="btn">?</button>
 <script>
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
