@@ -257,8 +257,6 @@
 /* ===== HELP AFFORDANCE (SAFE LAYER) ===== */
 #helpHint{
   position: fixed;
-  left: 62px;
-  bottom: 18px;
   z-index: 91;
     user-select: none;
   -webkit-user-select: none;
@@ -374,10 +372,25 @@ const frameFab = document.getElementById("frameFab");
 const customRatioBtn = document.getElementById("customRatioBtn");
 const deleteBtn = document.getElementById("deleteBtn");
 const exportBtn = document.getElementById("exportBtn");
+ 
+
+  
   /* ===== HELP LAYER LOGIC (ISOLATED) ===== */
 
 const helpHint = document.getElementById("helpHint");
 const helpOverlay = document.getElementById("helpOverlay");
+
+  // Positions the ? help button directly below the camera (👁) button.
+// Safe: read-only layout measurement. Remove this block if it ever causes issues.
+function positionHelpHint(){
+  const r = toggleCam.getBoundingClientRect();
+  helpHint.style.left = (r.left + r.width/2 - 12) + "px";
+  helpHint.style.top  = (r.bottom + 8) + "px";
+}
+
+positionHelpHint();
+window.addEventListener("resize", positionHelpHint);
+
 
 let helpTimer = null;
 let helpActive = false;
